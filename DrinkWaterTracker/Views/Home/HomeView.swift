@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var authViewModel: test.AuthViewModel
+    @ObservedObject var authViewModel: DrinkWaterTracker.AuthViewModel
     @ObservedObject var waterViewModel: WaterViewModel
     @State private var showingAddIntake = false
     @State private var showingSettings = false

@@ -36,7 +36,7 @@ struct LoginView: View {
             
             Toggle("Remember Username", isOn: $authViewModel.rememberUsername)
                 .padding(.horizontal)
-                .onChange(of: authViewModel.rememberUsername) { newValue in
+                .onChange(of: authViewModel.rememberUsername) { oldValue, newValue in
                     authViewModel.updateRememberUsername(newValue)
                 }
             

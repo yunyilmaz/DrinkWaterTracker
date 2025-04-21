@@ -90,3 +90,11 @@ struct SettingsView: View {
         }
     }
 }
+
+// MARK: - Preview Provider
+#Preview {
+    SettingsView(
+        waterViewModel: WaterViewModel(),
+        authViewModel: AuthViewModel()
+    )
+}

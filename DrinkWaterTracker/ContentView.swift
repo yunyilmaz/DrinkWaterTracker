@@ -2,8 +2,8 @@ import SwiftUI
 
 // MARK: - Main View
 struct ContentView: View {
-    @StateObject private var authViewModel = test.AuthViewModel()
-    @StateObject private var waterViewModel = test.WaterViewModel()
+    @StateObject private var authViewModel = DrinkWaterTracker.AuthViewModel()
+    @StateObject private var waterViewModel = DrinkWaterTracker.WaterViewModel()
     
     var body: some View {
         Group {
