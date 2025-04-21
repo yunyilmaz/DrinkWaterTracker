@@ -69,6 +69,88 @@ class WaterViewModel: ObservableObject {
         return min(todayTotal / max(dailyGoal.target, 1.0), 1.0)
     }
     
+    func averageIntake(for timeframe: StatisticsView.Timeframe) -> Double {
+        let filteredIntakes = getFilteredIntakes(for: timeframe)
+        
+        // Group intakes by day
+        let calendar = Calendar.current
+        var dailyTotals: [Date: Double] = [:]
+        
+        for intake in filteredIntakes {
+            let dayStart = calendar.startOfDay(for: intake.timestamp)
+            dailyTotals[dayStart, default: 0] += intake.amount
+        }
+        
+        // Calculate average
+        let sum = dailyTotals.values.reduce(0, +)
+        let count = max(dailyTotals.count, 1) // Avoid division by zero
+        
+        return sum / Double(count)
+    }
+    
+    func achievementRate(for timeframe: StatisticsView.Timeframe) -> Double {
+        let filteredIntakes = getFilteredIntakes(for: timeframe)
+        let calendar = Calendar.current
+        var daysAchieved = 0
+        var dailyTotals: [Date: Double] = [:]
+        
+        // Calculate daily totals
+        for intake in filteredIntakes {
+            let dayStart = calendar.startOfDay(for: intake.timestamp)
+            dailyTotals[dayStart, default: 0] += intake.amount
+        }
+        
+        // Count days that met the target
+        for (_, total) in dailyTotals {
+            if total >= dailyGoal.target {
+                daysAchieved += 1
+            }
+        }
+        
+        // Calculate achievement rate
+        let daysCount = max(dailyTotals.count, 1) // Avoid division by zero
+        return Double(daysAchieved) / Double(daysCount)
+    }
+    
+    func bestDay(for timeframe: StatisticsView.Timeframe) -> String {
+        let filteredIntakes = getFilteredIntakes(for: timeframe)
+        let calendar = Calendar.current
+        var dailyTotals: [Date: Double] = [:]
+        
+        // Calculate daily totals
+        for intake in filteredIntakes {
+            let dayStart = calendar.startOfDay(for: intake.timestamp)
+            dailyTotals[dayStart, default: 0] += intake.amount
+        }
+        
+        // Find the day with maximum intake
+        if let bestDay = dailyTotals.max(by: { $0.value < $1.value }) {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            return "\(formatter.string(from: bestDay.key)) (\(Int(bestDay.value)) ml)"
+        }
+        
+        return "No data available"
+    }
+    
+    private func getFilteredIntakes(for timeframe: StatisticsView.Timeframe) -> [WaterIntake] {
+        let calendar = Calendar.current
+        let today = Date()
+        let startDate: Date
+        
+        switch timeframe {
+        case .week:
+            startDate = calendar.date(byAdding: .day, value: -7, to: today) ?? today
+        case .month:
+            startDate = calendar.date(byAdding: .month, value: -1, to: today) ?? today
+        case .year:
+            startDate = calendar.date(byAdding: .year, value: -1, to: today) ?? today
+        }
+        
+        return waterIntakes.filter { $0.timestamp >= startDate && $0.timestamp <= today }
+    }
+    
     private func saveData() {
         do {
             let encodedIntakes = try JSONEncoder().encode(waterIntakes)
