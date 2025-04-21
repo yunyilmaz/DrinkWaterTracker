@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		987734272DB3200C00E42C45 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		987734342DB3200D00E42C45 /* testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9877343E2DB3200D00E42C45 /* testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		987734272DB3200C00E42C45 /* DrinkWaterTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkWaterTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		987734342DB3200D00E42C45 /* DrinkWaterTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkWaterTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9877343E2DB3200D00E42C45 /* DrinkWaterTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkWaterTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		987734292DB3200C00E42C45 /* test */ = {
+		987734292DB3200C00E42C45 /* DrinkWaterTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = test;
+			path = DrinkWaterTracker;
 			sourceTree = "<group>";
 		};
-		987734372DB3200D00E42C45 /* testTests */ = {
+		987734372DB3200D00E42C45 /* DrinkWaterTrackerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = testTests;
+			path = DrinkWaterTrackerTests;
 			sourceTree = "<group>";
 		};
-		987734412DB3200D00E42C45 /* testUITests */ = {
+		987734412DB3200D00E42C45 /* DrinkWaterTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = testUITests;
+			path = DrinkWaterTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		9877341E2DB3200C00E42C45 = {
 			isa = PBXGroup;
 			children = (
-				987734292DB3200C00E42C45 /* test */,
-				987734372DB3200D00E42C45 /* testTests */,
-				987734412DB3200D00E42C45 /* testUITests */,
+				987734292DB3200C00E42C45 /* DrinkWaterTracker */,
+				987734372DB3200D00E42C45 /* DrinkWaterTrackerTests */,
+				987734412DB3200D00E42C45 /* DrinkWaterTrackerUITests */,
 				987734282DB3200C00E42C45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		987734282DB3200C00E42C45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				987734272DB3200C00E42C45 /* test.app */,
-				987734342DB3200D00E42C45 /* testTests.xctest */,
-				9877343E2DB3200D00E42C45 /* testUITests.xctest */,
+				987734272DB3200C00E42C45 /* DrinkWaterTracker.app */,
+				987734342DB3200D00E42C45 /* DrinkWaterTrackerTests.xctest */,
+				9877343E2DB3200D00E42C45 /* DrinkWaterTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		987734262DB3200C00E42C45 /* test */ = {
+		987734262DB3200C00E42C45 /* DrinkWaterTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 987734482DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "test" */;
+			buildConfigurationList = 987734482DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTracker" */;
 			buildPhases = (
 				987734232DB3200C00E42C45 /* Sources */,
 				987734242DB3200C00E42C45 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				987734292DB3200C00E42C45 /* test */,
+				987734292DB3200C00E42C45 /* DrinkWaterTracker */,
 			);
-			name = test;
+			name = DrinkWaterTracker;
 			packageProductDependencies = (
 			);
 			productName = test;
-			productReference = 987734272DB3200C00E42C45 /* test.app */;
+			productReference = 987734272DB3200C00E42C45 /* DrinkWaterTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		987734332DB3200D00E42C45 /* testTests */ = {
+		987734332DB3200D00E42C45 /* DrinkWaterTrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9877344B2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "testTests" */;
+			buildConfigurationList = 9877344B2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTrackerTests" */;
 			buildPhases = (
 				987734302DB3200D00E42C45 /* Sources */,
 				987734312DB3200D00E42C45 /* Frameworks */,
@@ -131,18 +131,18 @@
 				987734362DB3200D00E42C45 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				987734372DB3200D00E42C45 /* testTests */,
+				987734372DB3200D00E42C45 /* DrinkWaterTrackerTests */,
 			);
-			name = testTests;
+			name = DrinkWaterTrackerTests;
 			packageProductDependencies = (
 			);
 			productName = testTests;
-			productReference = 987734342DB3200D00E42C45 /* testTests.xctest */;
+			productReference = 987734342DB3200D00E42C45 /* DrinkWaterTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9877343D2DB3200D00E42C45 /* testUITests */ = {
+		9877343D2DB3200D00E42C45 /* DrinkWaterTrackerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9877344E2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "testUITests" */;
+			buildConfigurationList = 9877344E2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTrackerUITests" */;
 			buildPhases = (
 				9877343A2DB3200D00E42C45 /* Sources */,
 				9877343B2DB3200D00E42C45 /* Frameworks */,
@@ -154,13 +154,13 @@
 				987734402DB3200D00E42C45 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				987734412DB3200D00E42C45 /* testUITests */,
+				987734412DB3200D00E42C45 /* DrinkWaterTrackerUITests */,
 			);
-			name = testUITests;
+			name = DrinkWaterTrackerUITests;
 			packageProductDependencies = (
 			);
 			productName = testUITests;
-			productReference = 9877343E2DB3200D00E42C45 /* testUITests.xctest */;
+			productReference = 9877343E2DB3200D00E42C45 /* DrinkWaterTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 987734222DB3200C00E42C45 /* Build configuration list for PBXProject "test" */;
+			buildConfigurationList = 987734222DB3200C00E42C45 /* Build configuration list for PBXProject "DrinkWaterTracker" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				987734262DB3200C00E42C45 /* test */,
-				987734332DB3200D00E42C45 /* testTests */,
-				9877343D2DB3200D00E42C45 /* testUITests */,
+				987734262DB3200C00E42C45 /* DrinkWaterTracker */,
+				987734332DB3200D00E42C45 /* DrinkWaterTrackerTests */,
+				9877343D2DB3200D00E42C45 /* DrinkWaterTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		987734362DB3200D00E42C45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 987734262DB3200C00E42C45 /* test */;
+			target = 987734262DB3200C00E42C45 /* DrinkWaterTracker */;
 			targetProxy = 987734352DB3200D00E42C45 /* PBXContainerItemProxy */;
 		};
 		987734402DB3200D00E42C45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 987734262DB3200C00E42C45 /* test */;
+			target = 987734262DB3200C00E42C45 /* DrinkWaterTracker */;
 			targetProxy = 9877343F2DB3200D00E42C45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -456,7 +456,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkWaterTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkWaterTracker";
 			};
 			name = Debug;
 		};
@@ -474,7 +474,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkWaterTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkWaterTracker";
 			};
 			name = Release;
 		};
@@ -513,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		987734222DB3200C00E42C45 /* Build configuration list for PBXProject "test" */ = {
+		987734222DB3200C00E42C45 /* Build configuration list for PBXProject "DrinkWaterTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				987734462DB3200D00E42C45 /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		987734482DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "test" */ = {
+		987734482DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				987734492DB3200D00E42C45 /* Debug */,
@@ -531,7 +531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9877344B2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "testTests" */ = {
+		9877344B2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9877344C2DB3200D00E42C45 /* Debug */,
@@ -540,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9877344E2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "testUITests" */ = {
+		9877344E2DB3200D00E42C45 /* Build configuration list for PBXNativeTarget "DrinkWaterTrackerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9877344F2DB3200D00E42C45 /* Debug */,
