@@ -5,6 +5,8 @@ struct HomeView: View {
     @ObservedObject var waterViewModel: WaterViewModel
     @State private var showingAddIntake = false
     @State private var showingSettings = false
+    @State private var showingEditIntake = false
+    @State private var selectedIntake: WaterIntake?
     
     var body: some View {
         VStack(spacing: 20) {
@@ -22,34 +24,13 @@ struct HomeView: View {
             }
             .padding(.horizontal)
             
-            // Progress display
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 20)
-                    .opacity(0.3)
-                    .foregroundColor(.blue)
-                
-                Circle()
-                    .trim(from: 0.0, to: CGFloat(waterViewModel.getDailyProgress()))
-                    .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(.blue)
-                    .rotationEffect(Angle(degrees: 270.0))
-                    .animation(.linear, value: waterViewModel.getDailyProgress())
-                
-                VStack {
-                    Text("\(Int(waterViewModel.todayTotal)) ml")
-                        .font(.system(size: 32, weight: .bold))
-                    
-                    Text("of \(Int(waterViewModel.dailyGoal.target)) ml")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-            }
-            .frame(height: 240)
-            .padding()
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel("Water intake progress: \(Int(waterViewModel.getDailyProgress() * 100))%")
-            .accessibilityValue("\(Int(waterViewModel.todayTotal)) ml of \(Int(waterViewModel.dailyGoal.target)) ml")
+            // Replace circle progress with human figure animation
+            HumanWaterFillView(
+                progress: waterViewModel.getDailyProgress(),
+                totalAmount: Int(waterViewModel.todayTotal),
+                targetAmount: Int(waterViewModel.dailyGoal.target)
+            )
+            .padding(.horizontal)
             
             // List of today's water intakes
             List {
@@ -69,6 +50,27 @@ struct HomeView: View {
                             Spacer()
                             Text(intake.timestamp, style: .time)
                                 .foregroundColor(.secondary)
+                        }
+                        .contentShape(Rectangle())
+                        .contextMenu {
+                            Button(action: {
+                                selectedIntake = intake
+                                showingEditIntake = true
+                            }) {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            
+                            Button(role: .destructive, action: {
+                                if let index = waterViewModel.waterIntakes.firstIndex(where: { $0.id == intake.id }) {
+                                    waterViewModel.removeWaterIntake(at: IndexSet([index]))
+                                }
+                            }) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                        .onTapGesture {
+                            selectedIntake = intake
+                            showingEditIntake = true
                         }
                     }
                     .onDelete(perform: waterViewModel.removeWaterIntake)
@@ -93,6 +95,11 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showingSettings) {
             SettingsView(waterViewModel: waterViewModel, authViewModel: authViewModel)
+        }
+        .sheet(isPresented: $showingEditIntake) {
+            if let intake = selectedIntake {
+                EditWaterIntakeView(waterViewModel: waterViewModel, intake: intake)
+            }
         }
         .onAppear {
             waterViewModel.calculateTodayTotal()

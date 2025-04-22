@@ -51,6 +51,14 @@ class WaterViewModel: ObservableObject {
         calculateTodayTotal()
     }
     
+    func updateWaterIntake(id: UUID, amount: Double) {
+        if let index = waterIntakes.firstIndex(where: { $0.id == id }) {
+            waterIntakes[index].amount = amount
+            saveData()
+            calculateTodayTotal()
+        }
+    }
+    
     func updateDailyGoal(target: Double) {
         dailyGoal = DailyWaterGoal(target: target)
         saveData()
